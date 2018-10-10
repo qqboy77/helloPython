@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from . import view,testdb,search
+from . import view,testdb,search,book
+import bookManager.urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,4 +26,6 @@ urlpatterns = [
     path('search_form',search.search_form),
     path('search',search.search),
     path('search-post',search.search_post),
+    path('api/add_book',book.add_book),
+    path('api/show_books',book.show_books),
 ]
